@@ -63,7 +63,7 @@ foreach ( $xlsx->rows ( 3 ) as $k => $r ) {
 		}
 }
 if($errorBit == 0){
-	echo "<div style=\"color:green;\">Congratulation! Your File Has Been Uploaded! :D</div>";
+	echo "<div style=\"color:green;\"><h2>Congratulation!</h2><br> Your File Has Been Uploaded! :D</div>";
 }
 else{
 	echo $errorMsg;
