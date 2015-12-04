@@ -58,8 +58,8 @@ if(!isset($_SESSION['logstatus'])){
 		<div class="top-bar-left">
 			<ul class="menu">
 				<li class="menu-text">Administrator</li>
-				<li><a href="http://localhost/uploadpage.php">Update Record</a></li>
-				<li><a href="#">Upload</a></li>
+				<li><a href="http://localhost/editpage.php">Edit Record</a></li>
+				<li><a href="http://localhost/uploadpage.php">Upload</a></li>
 			</ul>
 		</div>
 		<div class="top-bar-right">
@@ -75,7 +75,7 @@ if(!isset($_SESSION['logstatus'])){
 			<table>
 				<tr>
 					<td>Choose File:</td>
-					<td><input type="file" id="file" name="file" accept=".xlsx"></td>
+					<td><input type="file" class="file-input" id="file" name="file" accept=".xlsx"></td>
 				</tr>
 				<tr>
 					<td></td>

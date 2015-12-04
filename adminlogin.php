@@ -17,7 +17,7 @@ body{
 </style>
 
 <script type="text/javascript">
-var globalNum = 2;
+var globalNum = 3;
 
 function adminLogin(){
 	var userName = document.getElementById("username");
@@ -84,7 +84,7 @@ function adminLogin(){
 				data-accordionmenu="2xy504-accordionmenu"
 				data-responsivemenu="ugo6pb-responsivemenu">
 				<li class="menu-text" role="menuitem">Administrator</li>
-				<li role="menuitem"><a href="#">Update Record</a></li>
+				<li role="menuitem"><a href="http://localhost/editpage.php">Edit Record</a></li>
 				<li role="menuitem"><a href="http://localhost/uploadpage.php">Upload</a></li>
 			</ul>
 		</div>
@@ -94,7 +94,7 @@ function adminLogin(){
 		<div class="medium-7 large-6 columns">
 			<h1>APKS Administrator Login</h1>
 			<p class="subheader">Use Foundation 6 as css template. This page is
-				for administrator login. Nothing else</p>
+				for administrator login. Nothing special</p>
 		</div>
 		<div class="medium-5 large-5 columns">
 			<div class="callout secondary">
