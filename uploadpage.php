@@ -36,6 +36,7 @@ body{
 	background-image: url("pics/adminbk2.jpg");
 	background-repeat:no-repeat;
     background-size:100% 100%;
+    background-attachment: fixed;
 }
 </style>
 
