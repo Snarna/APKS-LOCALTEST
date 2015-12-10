@@ -18,7 +18,7 @@ body{
 </style>
 
 <script type="text/javascript">
-var globalNum = 3;
+var globalNum = 2;
 
 function adminLogin(){
 	var userName = document.getElementById("username");
@@ -53,7 +53,7 @@ function adminLogin(){
 						globalNum--;
 						if(globalNum == 0){
 							//Send Redirect
-							window.location.replace("http://localhost/uploadpage.php");
+							window.location.replace("http://localhost/editpage.php");
 						}
 					}, 1000);
 				}

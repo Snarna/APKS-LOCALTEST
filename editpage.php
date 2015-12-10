@@ -1,3 +1,10 @@
+<?php
+// Check Session
+session_start ();
+if (! isset ( $_SESSION ['logstatus'] )) {
+	header ( 'Location: http://localhost/adminlogin.php' );
+}
+?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
 <html>
 <head>
@@ -92,7 +99,7 @@ function backRecord(rid, rawThis){
 	//Change from input back to text
 	$("#resulttable tr:eq('"+ trNum +"') :input").each(function(){
 		if($(this).attr("class") == "button"){
-			cells[cellsCount].innerHTML = "<button class=\"button\" onclick=\"editRecord("+id+"this);\">Edit</button>";
+			cells[cellsCount].innerHTML = "<button class=\"button\" onclick=\"editRecord("+id+",this);\">Edit</button>";
 		}
 		else{
 			cells[cellsCount].innerHTML = $(this).val();
@@ -116,10 +123,17 @@ function writeRecord(rid, trNum){
 		data: {id:rid, busnum:values[0], groupnum:values[1], guestname:values[2], guestnum:values[3], roomnum:values[4], tabledate:values[5], airport:values[6], flight:values[7], flighttime:values[8], hotel:values[9], agent:values[10], phone:values[11], groupcode:values[12], remark:values[13]},
 		datatype: "text",
 		success: function(data){
-			//Do Something 
+			if(data == "pass"){
+				$("#resulttable tr:eq('"+trNum+"')").animate({backgroundColor:"#99ff99"},500); 
+				$("#resulttable tr:eq('"+trNum+"')").animate({backgroundColor:"#ffffff"},500);
+			}
+			else{
+				$("#resulttable tr:eq('"+trNum+"')").animate({backgroundColor:"#ff3333"},500); 
+				alert("Failed Due To:" + data);
+			}
 		},
 		error: function(errorThrown){
-			//Do Something
+			alert("Communication Error! Please Check Your Internet Connection."); 
 		}
 	});
 }
@@ -135,14 +149,6 @@ body {
 </style>
 
 </head>
-
-<?php
-// Check Session
-session_start ();
-if (! isset ( $_SESSION ['logstatus'] )) {
-	header ( 'Location: http://localhost/adminlogin.php' );
-}
-?>
 
 <body>
 	<div class="top-bar" id="realEstateMenu">
