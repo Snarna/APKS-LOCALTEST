@@ -47,7 +47,7 @@ if(validateDate($_GET['date'])){
 		echo "<tbody>";
 		while($row = $result->fetch_assoc()){
 			echo "<tr>";
-			echo "<td><button class=\"button\" onclick=\"editRecord(this);\">Edit</button></td>";
+			echo "<td><button class=\"button\" onclick=\"editRecord(" . $row["guestid"] . ",this);\">Edit</button></td>";
 			echo "<td>" . $row["busnum"] . "</td>";
 			echo "<td>" . $row["groupnum"] . "</td>";
 			echo "<td>" . $row["guestname"] . "</td>";
