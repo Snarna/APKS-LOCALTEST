@@ -1,4 +1,10 @@
 <?php
+//Validation
+function validateDate($date, $format = 'Y-m-d')
+{
+	$d = DateTime::createFromFormat($format, $date);
+	return $d && $d->format($format) == $date;
+}
 $servername = "localhost:3306";
 $username = "snarna";
 $password = "limingjie";
@@ -26,7 +32,9 @@ $phone = $_GET["phone"];
 $groupcode = $_GET["groupcode"];
 $remark = $_GET["remark"];
 
-
+if(!validateDate($tabledate)){
+	die("Invalid Date Format. :(");
+}
 try{
 	$command = "UPDATE guestrecord SET busnum='".$busnum."', groupnum='".$groupnum."', guestname='".$guestname."',
 			guestnum='".$guestnum."', roomnum='".$roomnum."', tabledate='".$tabledate."', airport='".$airport."', flight='".$flight."',

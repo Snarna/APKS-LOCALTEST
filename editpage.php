@@ -129,11 +129,11 @@ function writeRecord(rid, trNum){
 			}
 			else{
 				$("#resulttable tr:eq('"+trNum+"')").animate({backgroundColor:"#ff3333"},500); 
-				alert("Failed Due To:" + data);
+				alert("Failed Due To: " + data);
 			}
 		},
-		error: function(errorThrown){
-			alert("Communication Error! Please Check Your Internet Connection."); 
+		error: function(error){
+			alert("Communication Error! Please Check Your Internet Connection." + error); 
 		}
 	});
 }
